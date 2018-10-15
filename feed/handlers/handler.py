@@ -1,30 +1,7 @@
 import requests
 from config import URLS
-import atexit
-from apscheduler.schedulers.background import BackgroundScheduler
 from feed.mappers import round_mapper
 from feed.respositories import round_repository
-
-
-def scheduled_round_call():
-
-    token = get_auth_token()
-    call_round_api(token)
-
-    return "Scheduled round call"
-
-
-scheduler = BackgroundScheduler()
-scheduler.add_job(func=scheduled_round_call(), trigger="interval", hours=12)
-scheduler.start()
-
-# Shut down the scheduler when exiting the app
-atexit.register(lambda: scheduler.shutdown())
-
-
-#
-# API FEEDS
-#
 
 
 def call_round_api(token):
