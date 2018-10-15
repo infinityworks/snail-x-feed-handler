@@ -1,12 +1,5 @@
-from flask import Flask
-app = Flask(__name__)
+from feed import *
 
-
-@app.route('/')
-def hello_world():
-    return "Hello, world!"
-
-
-def call_round_api():
-    return "Calling round api"
+if __name__ == '__main__':
+    app.run()
 
