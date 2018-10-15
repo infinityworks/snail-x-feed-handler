@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "JSnail",
+        "trainer": {
+            "id": 1,
+            "name": "Junaid"
+        }
+    },
+    {
+        "id": 2,
+        "name": "Snail2",
+        "trainer": {
+            "id": 1,
+            "name": "Junaid"
+        }
+    },
+    {
+        "id": 3,
+        "name": "Snail3",
+        "trainer": {
+            "id": 1,
+            "name": "Junaid"
+        }
+    }
+]
