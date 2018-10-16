@@ -1,7 +1,8 @@
 import requests
 from config import URLS
 from feed.mappers import round_mapper
-from feed.respositories import round_repository
+from feed.models.round import Round
+from feed.repositories import round_repository
 import json
 
 
@@ -19,7 +20,12 @@ def call_round_api(token):
 
     print(response)
 
-    response_body = response.json()
+    round = Round(3, "Test", "Mon, 01 Oct 2018 10:00:00 GMT", "Mon, 01 Oct 2018 12:00:00 GMT")
+
+    print(round)
+    round_repository.save(round)
+
+    # response_body = response.json()
 
     # get last entry, check if we have it stored
     # latest_round = response_body[:-1]
@@ -32,7 +38,7 @@ def call_round_api(token):
     #     # process races
     # else:
     #     print("exists")
-    return response_body
+    return round
 
 
 # AUTH

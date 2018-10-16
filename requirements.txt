@@ -1,5 +1,7 @@
+sqlalchemy
 apscheduler
 requests
 Flask==1.0.2
 gunicorn==19.9.0
 flask-migrate==2.2.1
+psycopg2

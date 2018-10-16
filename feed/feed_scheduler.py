@@ -9,14 +9,14 @@ def scheduled_round_call():
 
     token = handler.get_auth_token()
     print("token:" + token)
-    # handler.call_round_api(token)
+    handler.call_round_api(token)
 
     return "Scheduled round call"
 
 
 def run_scheduler():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(func=scheduled_round_call, trigger="interval", seconds=12)
+    scheduler.add_job(func=scheduled_round_call, trigger="interval", seconds=5)
     scheduler.start()
     print("Scheduler started.")
 

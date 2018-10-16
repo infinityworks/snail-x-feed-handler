@@ -11,6 +11,6 @@ class TestHandler(unittest.TestCase):
         token = handler.get_auth_token()
         self.assertTrue(len(token) > 0)
 
-    def test_get_rounds_with_auth_token(self):
-        print(self.token)
-        print(handler.call_round_api(self.token))
+    # def test_get_rounds_with_auth_token(self):
+    #     print(self.token)
+    #     print(handler.call_round_api(self.token))
