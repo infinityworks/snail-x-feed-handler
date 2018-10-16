@@ -1,11 +1,11 @@
 import os
 
 URLS = {
-    'auth': '/auth/token',
-    'rounds': '/rounds',
-    'races': '/races',
-    'snails': '/snails',
-    'results': '/results'
+    'auth': 'https://dev-snailx-api.herokuapp.com//auth/token',
+    'rounds': 'https://dev-snailx-api.herokuapp.com/rounds',
+    'races': 'https://dev-snailx-api.herokuapp.com/races',
+    'snails': 'https://dev-snailx-api.herokuapp.com/snails',
+    'results': 'https://dev-snailx-api.herokuapp.com/results'
 }
 
 DB = {
@@ -15,8 +15,6 @@ DB = {
     'database': "snailRacing",
     'port': "5432"
 }
-
-basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config:
