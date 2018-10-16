@@ -1,11 +1,12 @@
-import sqlalchemy
 from feed.db.db_setup import get_db
 
 db = get_db()
 
+
 class Snail(db.Model):
+
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(12), nullable=False)
+    name = db.Column(db.String(50), nullable=False)
     trainer_id = db.Column(db.Integer, db.ForeignKey('trainer.id'))
 
     def __repr__(self):
