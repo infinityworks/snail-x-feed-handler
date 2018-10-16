@@ -21,7 +21,7 @@ class Round(db.Model):
                                                                                       self.start_date, self.finish_date)
 
     def get_round(self, id):
-        return self.query.filter_by(id=id).first()
+        return self.query.filter_by(round_id=id).first()
 
     def get_all_rounds(self):
         return self.query.all()
