@@ -1,6 +1,4 @@
-from feed.db.db_setup import get_db
-
-db = get_db()
+from feed import db
 
 
 class Snail(db.Model):

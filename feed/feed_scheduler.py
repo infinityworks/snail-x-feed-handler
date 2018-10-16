@@ -5,15 +5,19 @@ from feed.handlers import handler
 
 def scheduled_round_call():
 
-    token = handler.get_auth_token()
-    handler.call_round_api(token)
+    print("Running scheduled round call")
+
+    # token = handler.get_auth_token()
+    # handler.call_round_api(token)
 
     return "Scheduled round call"
 
 
-scheduler = BackgroundScheduler()
-scheduler.add_job(func=scheduled_round_call(), trigger="interval", hours=12)
-scheduler.start()
+def run_scheduler():
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(func=scheduled_round_call, trigger="interval", seconds=12)
+    scheduler.start()
+    print("Scheduler started.")
 
-# Shut down the scheduler when exiting the app
-atexit.register(lambda: scheduler.shutdown())
+    # Shut down the scheduler when exiting the app
+    atexit.register(lambda: scheduler.shutdown())

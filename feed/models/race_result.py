@@ -1,10 +1,8 @@
-from feed.db.db_setup import get_db
-
-db = get_db()
+from feed import db
 
 
 class RaceResult(db.Model):
-    id = db.Column(db.Integer(), primary_key=True, autoincrement=True)
+    id = db.Column(db.Integer(), primary_key=True)
     position = db.Column(db.Integer(), nullable=False)
 
     time_to_finish = db.Column(db.Integer(), nullable=False)

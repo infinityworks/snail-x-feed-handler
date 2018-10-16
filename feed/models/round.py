@@ -1,11 +1,9 @@
-from feed.db.db_setup import get_db
-
-db = get_db()
+from feed import db
 
 
 class Round(db.Model):
 
-    id = db.Column(db.Integer(), primary_key=True, autoincrement=True)
+    id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(20), nullable=False)
     start_date = db.Column(db.DateTime(), nullable=False)
     end_date = db.Column(db.DateTime(), nullable=False)

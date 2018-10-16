@@ -1,11 +1,9 @@
-from feed.db.db_setup import get_db
-
-db = get_db()
+from feed import db
 
 
 class Race(db.Model):
 
-    id = db.Column(db.Integer(), primary_key=True, autoincrement=True)
+    id = db.Column(db.Integer(), primary_key=True)
     date = db.Column(db.DateTime(), nullable=False)
     status = db.Column(db.String(), nullable=False)
     id_round = db.Column(db.Integer(), db.ForeignKey("round.id"))
