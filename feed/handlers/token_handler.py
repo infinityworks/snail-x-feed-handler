@@ -2,8 +2,12 @@ import requests
 from config import URLS
 
 
-def get_auth_token():
+def call_auth_api():
     url = URLS['auth']
-    request = requests.get(url)
-    token = request.json()['token']
+    response = requests.get(url)
+    return response
+
+
+def get_auth_token_from_response(response):
+    token = response['token']
     return token

@@ -19,6 +19,6 @@ def call_round_api(token):
 
     if round_id and race_list:
         print("process races")
-        race_handler.process_race_list(race_list, token)
+        race_handler.call_api_for_race_list(race_list, token)
     else:
         print("no new round to process")
