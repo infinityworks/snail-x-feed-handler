@@ -5,7 +5,8 @@ from feed.repositories import snail_repository
 
 def process_snail_list(snail_list, token):
     for id in snail_list:
-        call_snail_api(id, token)
+        response = call_snail_api(id, token)
+        process_snail_api_response_json(response.json())
 
 
 def call_snail_api(snail_id, token):
@@ -17,8 +18,8 @@ def call_snail_api(snail_id, token):
         'Authorization': token
     }
 
-    response = requests.get(url, headers=headers)
+    return requests.get(url, headers=headers)
 
-    response_json = response.json()
 
+def process_snail_api_response_json(response_json):
     snail_repository.process_snail_json(response_json)

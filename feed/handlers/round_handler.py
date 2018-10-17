@@ -11,9 +11,10 @@ def call_round_api(token):
         'Authorization': token
     }
 
-    response = requests.get(url, headers=headers)
+    return requests.get(url, headers=headers)
 
-    response_json = response.json()
+
+def process_round_response(response_json, token):
 
     round_id, race_list = round_repository.process_round_json(response_json)
 

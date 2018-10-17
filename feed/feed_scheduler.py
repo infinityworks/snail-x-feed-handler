@@ -7,9 +7,11 @@ def scheduled_round_call():
 
     print("Running scheduled round call")
 
-    response = token_handler.call_auth_api()
-    token = token_handler.get_auth_token_from_response(response.json())
-    round_handler.call_round_api(token)
+    token_response = token_handler.call_auth_api()
+    token = token_handler.get_auth_token_from_response(token_response.json())
+
+    round_response = round_handler.call_round_api(token)
+    round_handler.process_round_response(round_response.json())
 
     return "Scheduled round call"
 
