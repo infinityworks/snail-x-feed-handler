@@ -11,8 +11,8 @@ def process_round_json(response_json):
 
     # # if we dont, process it, otherwise leave it
     if not exists:
-        round_id = round_source.save_round(round)
-        return round_id, race_list
+        round_source.save_round(round)
+        return round.id, race_list
         # process races
     else:
         # ignore
