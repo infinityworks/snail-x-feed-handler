@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "External",
+        "start_date": "Mon, 01 Oct 2018 10:00:00 GMT",
+        "end_date": "Mon, 01 Oct 2018 12:00:00 GMT",
+        "races": [1, 2, 3]
+    },
+    {
+        "id": 2,
+        "name": "Internal",
+        "start_date": "Mon, 02 Oct 2018 10:00:00 GMT",
+        "end_date": "Mon, 02 Oct 2018 12:00:00 GMT",
+        "races": [4, 5, 6]
+    }
+]

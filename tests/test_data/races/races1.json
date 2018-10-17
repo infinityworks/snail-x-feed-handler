@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "date": "Thu, 11 Oct 2018 10:47:00 GMT",
+        "status": "Started",
+        "id_round": 1,
+        "id_snails": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "id": 2,
+        "date": "Thu, 11 Oct 2018 15:00:00 GMT",
+        "status": "Started",
+        "id_round": 2,
+        "id_snails": [
+            2
+        ]
+    }
+]
