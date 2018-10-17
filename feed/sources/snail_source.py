@@ -8,6 +8,4 @@ def save(snail):
 
 
 def find_one_by_id(id):
-    response = Snail.query.get(id)
-
-    return response
+    return Snail.query.get(id)
