@@ -18,7 +18,7 @@ def scheduled_round_call():
 
 def run_scheduler():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(func=scheduled_round_call, trigger="interval", seconds=2)
+    scheduler.add_job(func=scheduled_round_call, trigger="interval", hours=12)
     scheduler.start()
     print("Scheduler started.")
 
