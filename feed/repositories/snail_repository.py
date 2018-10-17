@@ -14,5 +14,3 @@ def process_snail_json(snail_json):
     snail_exists = snail_source.find_one_by_id(snail.id)
     if not snail_exists:
         snail_source.save(snail)
-
-    print("DONE (Snail Processed - " + str(snail))

@@ -20,7 +20,8 @@ def process_round_response(response_json, token):
     round_id, race_list = round_repository.process_round_json(response_json)
 
     if round_id and race_list:
-        print("process races")
+        print("Processing races")
         race_handler.call_api_for_race_list(race_list, token)
+        print("Finished processing races")
     else:
-        print("no new round to process")
+        print("<No new round to process>")
