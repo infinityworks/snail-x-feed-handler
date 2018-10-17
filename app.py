@@ -1,7 +1,4 @@
 import threading
-import time
-
-import requests
 
 from feed import *
 from feed import feed_scheduler
