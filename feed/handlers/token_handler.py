@@ -8,6 +8,7 @@ def call_auth_api():
     response = requests.get(url)
     return response
 
+
 # Extracts token from the response
 def get_auth_token_from_response(response):
     token = response['token']
