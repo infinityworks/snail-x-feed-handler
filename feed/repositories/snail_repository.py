@@ -16,4 +16,3 @@ def process_snail_json(snail_json):
         snail_source.save(snail)
 
     print("DONE (Snail Processed - " + str(snail))
-

@@ -7,7 +7,6 @@ round1_path = str(test_path) + "/test_data/rounds/round1.json"
 
 
 class TestRoundMapper(unittest.TestCase):
-
     test_round_data = {
         "id": 1,
         "name": "External",

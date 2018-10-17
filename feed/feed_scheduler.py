@@ -4,7 +4,6 @@ from feed.handlers import round_handler, token_handler
 
 
 def scheduled_round_call():
-
     print("Running scheduled round call")
 
     token_response = token_handler.call_auth_api()

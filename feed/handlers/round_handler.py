@@ -15,7 +15,6 @@ def call_round_api(token):
 
 
 def process_round_response(response_json, token):
-
     round_id, race_list = round_repository.process_round_json(response_json)
 
     if round_id and race_list:

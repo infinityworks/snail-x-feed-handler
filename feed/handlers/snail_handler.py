@@ -10,7 +10,6 @@ def process_snail_list(snail_list, token):
 
 
 def call_snail_api(snail_id, token):
-
     url = URLS['snails'] + str(snail_id)
     print(url)
 
