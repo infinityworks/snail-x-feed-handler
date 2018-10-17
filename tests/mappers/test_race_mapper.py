@@ -7,7 +7,6 @@ race1_path = str(test_path) + "/test_data/races/singlerace1.json"
 
 
 class TestRoundMapper(unittest.TestCase):
-
     test_race_data = {
         "id": 1,
         "date": "Thu, 11 Oct 2018 10:47:00 GMT",
@@ -22,4 +21,3 @@ class TestRoundMapper(unittest.TestCase):
 
         self.assertEqual(race_id, self.test_race_data['id'])
         self.assertEqual(len(snail_list), len(self.test_race_data['id_snails']))
-
