@@ -7,10 +7,12 @@ def process_snail_json(snail_json):
     snail = json_to_snail(snail_json)
     trainer = snail_json_to_trainer(snail_json)
 
-    if not trainer_source.find_one_by_id(trainer.id):
+    trainer_exists = trainer_source.find_one_by_id(trainer.id)
+    if not trainer_exists:
         trainer_source.save(trainer)
 
-    if not snail_source.find_one_by_id(snail.id):
+    snail_exists = snail_source.find_one_by_id(snail.id)
+    if not snail_exists:
         snail_source.save(snail)
 
     print("DONE (Snail Processed - " + str(snail))
