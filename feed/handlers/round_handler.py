@@ -25,3 +25,6 @@ def process_round_response(response_json, token):
         print("Finished processing races")
     else:
         print("<No new round to process>")
+
+def round_inflight():
+    return round_repository.round_inflight()

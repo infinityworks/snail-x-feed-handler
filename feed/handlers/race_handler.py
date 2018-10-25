@@ -27,9 +27,7 @@ def call_race_api(id, token):
 
 # Processes responses json by saving the race and returning a list of snails to be processed
 def process_race_response_json(response):
-    response_json = response
-
-    race, snail_list = race_repository.process_race_json(response_json)
+    race, snail_list = race_repository.process_race_json(response)
 
     if race and snail_list:
         print("Processing snails")
