@@ -3,13 +3,14 @@ from feed import db
 
 class RaceResult(db.Model):
 
+    __tablename__ = "raceresult"
+
     id = db.Column("race_result_id", db.Integer(), primary_key=True)
     race_id = db.Column(db.Integer(), db.ForeignKey("race.race_id"))
     snail_id = db.Column(db.Integer(), db.ForeignKey("snails.snail_id"))
     position = db.Column(db.Integer(), nullable=False)
 
-    def __init__(self, id, race_id, snail_id, position):
-        self.id = id
+    def __init__(self, race_id, snail_id, position):
         self.race_id = race_id
         self.snail_id = snail_id
         self.position = position

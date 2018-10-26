@@ -1,7 +1,7 @@
 from feed.models.race_result import RaceResult
 
 
-def json_to_race_and_snail_list(race_json):
-    snail_list = race_json['id_snails']
-    race = Race(race_json['id'], race_json['date'], race_json['status'], race_json['id_round'])
-    return race, snail_list
+def json_to_race_result(race_id, race_result_json):
+
+    race_result = RaceResult(race_id, race_result_json['id_snail'], race_result_json['position_snail'])
+    return race_result

@@ -12,12 +12,12 @@ def get_db():
     return db
 
 
-@app.teardown_appcontext
-def teardown_db(teardown):
-    db = getattr(g, '_database', None)
-
-    if db is not None:
-        db.close()
+# @app.teardown_appcontext
+# def teardown_db(teardown):
+#     db = getattr(g, '_database', None)
+#
+#     if db is not None:
+#         db.close()
 
 
 def connect_to_database():
