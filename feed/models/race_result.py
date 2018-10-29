@@ -2,7 +2,6 @@ from feed import db
 
 
 class RaceResult(db.Model):
-
     __tablename__ = "raceresult"
 
     id = db.Column("race_result_id", db.Integer(), primary_key=True)
@@ -16,7 +15,7 @@ class RaceResult(db.Model):
         self.position = position
 
     def __repr__(self):
-        return "<Race Result\nid: {}\n race_id: {}\n snail_id: {}\n position: {}>"\
+        return "<Race Result\nid: {}\n race_id: {}\n snail_id: {}\n position: {}>" \
             .format(self.id, self.race_id, self.snail_id, self.position)
 
     def get_race_result(self, id):

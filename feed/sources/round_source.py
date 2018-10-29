@@ -21,6 +21,7 @@ def round_inflight():
     else:
         return False
 
+
 def is_final_race(race_id):
     query = "SELECT round.round_id FROM round JOIN race ON round.round_id = race.round_id WHERE race.race_date = (SELECT MAX (race_date) FROM race) AND race.race_id = '{}'".format(race_id)
     query_result = db.engine.execute(query)
@@ -30,6 +31,7 @@ def is_final_race(race_id):
         return True
     else:
         return False
+
 
 def change_round_to_closed(is_final_race):
     round = find_one_by_id(is_final_race)

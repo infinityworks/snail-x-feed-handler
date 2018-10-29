@@ -6,6 +6,7 @@ def save(race_result):
     db.session.add(race_result)
     db.session.commit()
 
+
 # returns true if a race_result with the specified race_id exists in the db
 def check_race_resulted(race_id):
     query = "SELECT race_result_id FROM raceresult WHERE race_id = '{}'".format(str(race_id))
@@ -18,4 +19,3 @@ def check_race_resulted(race_id):
         return True
     else:
         return False
-
