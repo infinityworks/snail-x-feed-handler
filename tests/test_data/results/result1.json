@@ -1,0 +1,48 @@
+[
+  {
+    "id_race": 1,
+    "snails": [
+      {
+        "id_snail": 4,
+        "position_snail": 4,
+        "time_snail": 0,
+        "DNF": True
+      },
+      {
+        "id_snail": 3,
+        "position_snail": 3,
+        "time_snail": 500,
+        "DNF": False
+      },
+      {
+        "id_snail": 2,
+        "position_snail": 2,
+        "time_snail": 20,
+        "DNF": False
+      },
+      {
+        "id_snail": 1,
+        "position_snail": 1,
+        "time_snail": 10,
+        "DNF": False
+      }
+    ]
+  },
+  {
+    "id_race": 2,
+    "snails": [
+      {
+        "id_snail": 3,
+        "position_snail": 2,
+        "time_snail": 0,
+        "DNF": True
+      },
+      {
+        "id_snail": 1,
+        "position_snail": 1,
+        "time_snail": 10,
+        "DNF": False
+      }
+    ]
+  }
+]
