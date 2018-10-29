@@ -1,7 +1,7 @@
 import requests
 from config import URLS
 from feed.handlers import snail_handler
-from feed.repositories import race_repository
+from feed.repositories import race_repository, racecard_repository
 
 
 # Cycles through the race list to trigger API calls on each race id
@@ -10,6 +10,7 @@ def call_api_for_race_list(race_list, token):
         response = call_race_api(id, token)
         snail_list = process_race_response_json(response.json())
         if snail_list:
+            racecard_repository.write_racecard_data(id, snail_list)
             snail_handler.process_snail_list(snail_list, token)
             print("Finished processing snails")
 
