@@ -25,7 +25,7 @@ def round_inflight_check(): # Called every hour to check if a round is newly inf
         if round_handler.round_inflight():
             global_inflight = True
             print("Second scheduler running")
-            scheduler.add_job(func=scheduled_race_result_call, trigger="interval", minutes=15, id='100')
+            scheduler.add_job(func=scheduled_race_result_call, trigger="interval", seconds=3, id='100')
         else:
             print("No round inflight!")
 
@@ -47,8 +47,8 @@ def scheduled_race_result_call():
         print("API Unreachable.")
 
 def run_scheduler():
-    scheduler.add_job(func=scheduled_round_call, trigger="interval", hours=12)
-    scheduler.add_job(func=round_inflight_check, trigger="interval", hours=1)
+    scheduler.add_job(func=scheduled_round_call, trigger="interval", seconds=10)
+    scheduler.add_job(func=round_inflight_check, trigger="interval", seconds=5)
     scheduler.start()
     print("Scheduler started.")
 
