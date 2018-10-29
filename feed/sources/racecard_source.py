@@ -10,4 +10,7 @@ def save(racecard):
 def find_one_by_id(id):
     return Racecard.query.get(id)
 
-def find_one_by_race_id_and_snail_id(race_id, snail_id):
+def check_racecard_exists(race_id):
+    query = "SELECT race_card_id FROM racecard WHERE race_id = '{}'".format(str(race_id))
+    query_result = db.engine.execute(query)
+    result_exists = query_result.fetchone()
