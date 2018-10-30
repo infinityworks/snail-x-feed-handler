@@ -43,6 +43,7 @@ def scheduled_race_result_call():
         round_ended = race_result_handler.process_race_result_response(race_result_response.json())
         if round_ended:
             global_inflight = False
+            round_handler.calc_and_store_scores()
             print("Ending round!")
             scheduler.remove_job('100')
     else:

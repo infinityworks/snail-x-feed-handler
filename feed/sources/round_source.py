@@ -1,6 +1,7 @@
 import datetime
 from feed import db
 from feed.models.round import Round
+from feed.repositories.round_result_repository import calc_and_store_round_results
 from sqlalchemy import update
 
 
@@ -27,7 +28,9 @@ def is_final_race(race_id):
     query_result = db.engine.execute(query)
     is_final_race = query_result.fetchone()
     if is_final_race:
+        print("**************Final Race: " + str(race_id))
         change_round_to_closed(is_final_race)
+        calc_and_store_round_results(is_final_race[0])
         return True
     else:
         return False
