@@ -8,5 +8,3 @@ def write_racecard_data(race_id, snail_list):
         for snail_id in snail_list:
             racecard = racecard_mapper.create_racecard_object(race_id, snail_id)
             racecard_source.save(racecard)
-
-

@@ -6,6 +6,7 @@ scheduler = BackgroundScheduler()
 
 global_inflight = False
 
+
 def scheduled_round_call():
     print("Running scheduled round call")
 
@@ -18,7 +19,8 @@ def scheduled_round_call():
     else:
         print("API Unreachable.")
 
-def round_inflight_check(): # Called every hour to check if a round is newly inflight
+
+def round_inflight_check():  # Called every hour to check if a round is newly inflight
     print("round_inflight_check called!")
     global global_inflight  # Have to declare this weirdly so can access it within this method
     if not global_inflight:
@@ -45,6 +47,7 @@ def scheduled_race_result_call():
             scheduler.remove_job('100')
     else:
         print("API Unreachable.")
+
 
 def run_scheduler():
     scheduler.add_job(func=scheduled_round_call, trigger="interval", seconds=10)
