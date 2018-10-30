@@ -1,13 +1,14 @@
 import requests
 from config import URLS
-from feed.repositories import snail_repository
+from feed.repositories import snail_repository, racecard_repository
 
 
 # Cycles through a list of snails and calls API for each id
-def process_snail_list(snail_list, token):
-    for id in snail_list:
-        response = call_snail_api(id, token)
+def process_snail_list(race_id, snail_list, token):
+    for snail_id in snail_list:
+        response = call_snail_api(snail_id, token)
         process_snail_api_response_json(response.json())
+    racecard_repository.write_racecard_data(race_id, snail_list)
 
 
 # Calls the API for the snails and returns a response body
