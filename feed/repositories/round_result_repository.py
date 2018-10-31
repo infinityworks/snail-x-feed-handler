@@ -1,9 +1,9 @@
-from feed.sources import race_predictions_source, race_result_source
+from feed.sources import race_predictions_source, race_result_source, round_result_source
+from feed.mappers import round_result_mapper
+
 
 def calc_and_store_round_results(round_id):
-
     round_user_ids = get_round_user_ids(round_id)
-
 
     print("**************** round_user_ids: " + str(round_user_ids))
     for user_id in round_user_ids:
@@ -20,8 +20,10 @@ def calc_and_store_round_results(round_id):
         print("***** score: " + str(score))
 
         # creates a round_result object and saves to the db using this object
-        round_result = round_result_mapper.create_round_result(user_id, round_id, score)
+        round_result = round_result_mapper.create_round_result_object(user_id, round_id, score)
+        print("*** round_result_object; " + str(round_result))
         round_result_source.save(round_result)
+
 
 def get_round_user_ids(round_id):
     # round_user_id_tuples stores a list of tuples containing each of the participating users' ids.
@@ -31,6 +33,7 @@ def get_round_user_ids(round_id):
     for round_user_id_tuple in round_user_id_tuples:
         round_user_ids.append(round_user_id_tuple[0])
     return round_user_ids
+
 
 def calculate_user_score(relevant_race_results):
     score = 0
