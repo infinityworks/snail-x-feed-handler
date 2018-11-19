@@ -1,7 +1,7 @@
 import os
 
 URLS = {
-    'auth': 'https://dev-snailx-api.herokuapp.com//auth/token',
+    'auth': 'https://dev-snailx-api.herokuapp.com/auth/token',
     'rounds': 'https://dev-snailx-api.herokuapp.com/rounds',
     'races': 'https://dev-snailx-api.herokuapp.com/races/',
     'snails': 'https://dev-snailx-api.herokuapp.com/snails/',
