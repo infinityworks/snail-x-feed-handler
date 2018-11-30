@@ -17,7 +17,8 @@ def call_round_api(token):
 
 # Process the round response json by extracting out the round to save and then process the races
 def process_round_response(response_json, token):
-    round_id, race_list = round_repository.process_round_json(response_json)
+    print(response_json)
+    round_id, race_list = round_repository.process_round_json(response_json, token)
 
     if round_id and race_list:
         print("Processing races")

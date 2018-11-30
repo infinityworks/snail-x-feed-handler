@@ -50,7 +50,7 @@ def scheduled_race_result_call():
 
 
 def run_scheduler():
-    scheduler.add_job(func=scheduled_round_call, trigger="interval", seconds=10)
+    scheduler.add_job(func=scheduled_round_call, trigger="interval", seconds=15)
     scheduler.add_job(func=round_inflight_check, trigger="interval", seconds=5)
     scheduler.start()
     print("Scheduler started.")

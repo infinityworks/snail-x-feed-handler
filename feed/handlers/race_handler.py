@@ -16,7 +16,7 @@ def call_api_for_race_list(race_list, token):
 
 # Calls the API and returns a response body
 def call_race_api(id, token):
-    url = URLS['races'] + str(id)
+    url = URLS['races'] + "/" + str(id)
 
     headers = {
         'Authorization': token

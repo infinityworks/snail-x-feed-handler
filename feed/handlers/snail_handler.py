@@ -13,7 +13,7 @@ def process_snail_list(race_id, snail_list, token):
 
 # Calls the API for the snails and returns a response body
 def call_snail_api(snail_id, token):
-    url = URLS['snails'] + str(snail_id)
+    url = URLS['snails'] + "/" + str(snail_id)
 
     headers = {
         'Authorization': token
